@@ -1,4 +1,4 @@
-/* General styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,30 +7,29 @@
 }
 
 body {
-    background-color: #f4f6f9;
-    color: #333;
-}
-
-.container {
+    background-color: #f8f9fa;
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    background-color: #1d1e22;
-    padding: 20px;
+.container {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #1e3a8a; /* Dark Blue */
+    color: #fff;
+    width: 250px;
+    padding: 20px;
 }
 
 .sidebar .logo {
-    color: white;
     font-size: 24px;
     font-weight: bold;
+    margin-bottom: 40px;
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .sidebar nav ul {
@@ -38,24 +37,24 @@ body {
 }
 
 .sidebar nav ul li {
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 .sidebar nav ul li a {
-    color: #b0b3c0;
+    color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
+    display: block;
 }
 
 .sidebar nav ul li a:hover {
-    color: #ffffff;
+    color: #ffb703; /* Yellow for hover effect */
 }
 
-/* Main Content */
+/* Main Content Styles */
 .main-content {
-    flex-grow: 1;
+    flex: 1;
     padding: 20px;
-    background-color: #fff;
 }
 
 .header {
@@ -63,69 +62,74 @@ body {
 }
 
 .header h1 {
-    font-size: 26px;
-    margin-bottom: 5px;
+    font-size: 36px;
+    color: #1e3a8a;
 }
 
 .header p {
-    font-size: 14px;
-    color: #666;
+    font-size: 18px;
+    color: #6c757d;
 }
 
 /* Metrics Section */
 .metrics {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
     margin-bottom: 30px;
 }
 
 .metric-box {
-    width: 23%;
-    background-color: #f1f3f7;
+    flex: 1;
+    background-color: #fff;
     padding: 20px;
-    text-align: center;
     border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.metric-box p {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #555;
+.metric-box p:first-child {
+    font-size: 16px;
+    color: #6c757d;
 }
 
 .metric-box p:last-child {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
+    font-size: 24px;
+    color: #1e3a8a;
 }
 
 /* Analytics Section */
 .analytics {
-    background-color: #f1f3f7;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
 }
 
 .analytics h3 {
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: #333;
+    font-size: 20px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
 }
 
-.analytics .chart {
+.chart {
+    font-size: 28px;
     text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
+    color: #1e3a8a;
 }
 
 /* Process Status Section */
 .process-status {
-    background-color: #f1f3f7;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.process-status h3 {
+    font-size: 20px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
 }
 
 .process-status table {
@@ -133,28 +137,34 @@ body {
     border-collapse: collapse;
 }
 
-.process-status th, .process-status td {
+.process-status table th, .process-status table td {
+    padding: 12px;
     text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    font-size: 14px;
+    border-bottom: 1px solid #ddd;
 }
 
-.process-status th {
-    background-color: #eee;
+.process-status table th {
+    background-color: #1e3a8a;
+    color: #fff;
+}
+
+.process-status table td {
+    color: #1e3a8a;
 }
 
 /* Create Thread Section */
 .create-thread {
-    background-color: #f1f3f7;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
 
 .create-thread h3 {
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: #333;
+    font-size: 20px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
 }
 
 .create-thread form {
@@ -164,40 +174,25 @@ body {
 
 .create-thread label {
     margin-bottom: 5px;
-    font-size: 14px;
-    color: #333;
+    color: #6c757d;
 }
 
 .create-thread input, .create-thread textarea {
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 14px;
 }
 
 .create-thread button {
-    padding: 10px;
-    background-color: #5e72e4;
-    color: white;
+    padding: 12px;
+    background-color: #1e3a8a;
+    color: #fff;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
     cursor: pointer;
 }
 
 .create-thread button:hover {
-    background-color: #324cdd;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .metrics {
-        flex-direction: column;
-    }
-
-    .metric-box {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+    background-color: #ffb703;
 }

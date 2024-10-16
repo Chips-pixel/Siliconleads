@@ -1,1 +1,110 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+}
 
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, rgba(255, 0, 150, 0.7), rgba(0, 204, 255, 0.7)); /* Gradient for the header */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    transition: border-color 0.3s;
+}
+
+nav ul li a:hover {
+    border-color: #ff00ff; /* Pink border on hover */
+}
+
+/* Main content */
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 40px 0;
+}
+
+h2 {
+    border-bottom: 2px solid #ff00ff; /* Pink underline for section titles */
+    padding-bottom: 10px;
+}
+
+/* Features section */
+.feature {
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Contact form */
+form {
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #272727; /* Dark input background */
+    color: #ffffff; /* White text */
+}
+
+button {
+    background-color: #ff00ff; /* Pink button */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d5006d; /* Darker pink on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1e1e1e;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

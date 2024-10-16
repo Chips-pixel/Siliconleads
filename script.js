@@ -1,28 +1,52 @@
-// script.js
+// Simulate data loading for metrics
+document.addEventListener("DOMContentLoaded", function () {
+    // Simulate data for Total Scrapes and Active Threads
+    setTimeout(function () {
+        document.querySelector(".metric-box:nth-child(1) p:last-child").textContent = "1234";
+        document.querySelector(".metric-box:nth-child(3) p:last-child").textContent = "5";
+    }, 2000); // Simulates data loading after 2 seconds
+});
 
-// Function to handle form submission
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
+// Handle form submission for "Create Thread" section
+const createThreadForm = document.querySelector('.create-thread form');
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+createThreadForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        // Get the form data
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+    const niche = document.getElementById('niche').value;
+    const leadListName = document.getElementById('leadListName').value;
+    const leadListDescription = document.getElementById('leadListDescription').value;
 
-        // Validate the form data
-        if (!name || !email || !message) {
-            alert('Please fill in all fields.');
-            return;
-        }
+    // Basic form validation (ensure required fields are not empty)
+    if (!niche || !leadListName) {
+        alert('Please fill out all required fields.');
+        return;
+    }
 
-        // Simulate form submission (you can replace this with an actual API call)
-        console.log('Form submitted:', { name, email, message });
+    // Simulate thread creation process
+    alert(`Thread created successfully!\nNiche: ${niche}\nLead List Name: ${leadListName}\nDescription: ${leadListDescription}`);
+    
+    // Clear the form after submission
+    createThreadForm.reset();
+});
 
-        // Clear the form fields after submission
-        form.reset();
-        alert('Thank you for your message! We will get back to you soon.');
-    });
+// Placeholder for adding dynamic rows in "Process Status" table
+function addProcessStatusRow(name, status, target, progress) {
+    const tableBody = document.querySelector('.process-status tbody');
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+        <td>${name}</td>
+        <td>${status}</td>
+        <td>${target}</td>
+        <td>${progress}</td>
+    `;
+
+    tableBody.appendChild(row);
+}
+
+// Example: Adding rows dynamically (You can connect this to real data)
+document.addEventListener("DOMContentLoaded", function () {
+    addProcessStatusRow('Lead Generation', 'In Progress', '50 Leads', '30%');
+    addProcessStatusRow('Discord Scraping', 'Complete', '100 Leads', '100%');
 });

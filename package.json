@@ -1,0 +1,15 @@
+{
+  "name": "siliconleads-scraper",
+  "version": "1.0.0",
+  "description": "A Node.js backend for scraping leads",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10"
+  },
+  "author": "Chips-pixel",
+  "license": "MIT"
+}

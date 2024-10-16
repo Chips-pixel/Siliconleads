@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lead Scraper Dashboard</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <title>Silicon Lead Tracker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Main Container -->
-    <div class="container">
 
+    <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <div class="logo">
-                <h2>CASTFORM</h2>
-            </div>
+            <div class="logo">Silicon</div>
             <nav>
                 <ul>
                     <li><a href="#">Main Dashboard</a></li>
-                    <li><a href="#">Discord</a></li>
                     <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Google</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,23 +25,23 @@
         <!-- Main Content -->
         <div class="main-content">
             <div class="header">
-                <h1>Main Dashboard</h1>
-                <p>Facebook / Main Dashboard</p>
+                <h1>Lead Scraper Dashboard</h1>
+                <p>Track, analyze, and manage your leads from multiple sources</p>
             </div>
 
             <!-- Metrics Section -->
             <div class="metrics">
                 <div class="metric-box">
                     <p>Total Scrapes</p>
-                    <p>Loading...</p>
+                    <p id="total-scrapes">Loading...</p>
                 </div>
                 <div class="metric-box">
                     <p>Total Threads</p>
-                    <p>7</p>
+                    <p id="total-threads">Loading...</p>
                 </div>
                 <div class="metric-box">
                     <p>Active Threads</p>
-                    <p>7</p>
+                    <p id="active-threads">Loading...</p>
                 </div>
                 <div class="metric-box">
                     <p>Account Duration</p>
@@ -55,8 +53,7 @@
             <div class="analytics">
                 <h3>Profiles Scraped</h3>
                 <div class="chart">
-                    <p>0</p>
-                    <!-- Placeholder for future integration of a chart/graph -->
+                    <p id="scraped-profiles">Loading...</p>
                 </div>
             </div>
 
@@ -73,7 +70,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Add rows dynamically here if necessary -->
+                        <!-- Dynamic rows will be added here -->
                     </tbody>
                 </table>
             </div>
@@ -81,20 +78,22 @@
             <!-- Create Thread Section -->
             <div class="create-thread">
                 <h3>Create Thread</h3>
-                <form action="">
+                <form id="create-thread-form">
                     <label for="niche">Niche*</label>
-                    <input type="text" id="niche" name="niche" required>
+                    <input type="text" id="niche" placeholder="e.g., CEOs, Tech Founders" required>
 
                     <label for="leadListName">Lead List Name*</label>
-                    <input type="text" id="leadListName" name="leadListName" required>
+                    <input type="text" id="leadListName" placeholder="e.g., CEO Leads" required>
 
                     <label for="leadListDescription">Lead List Description</label>
-                    <textarea id="leadListDescription" name="leadListDescription" rows="3"></textarea>
+                    <textarea id="leadListDescription" placeholder="Describe the type of leads you're looking for"></textarea>
 
-                    <button type="submit">Create</button>
+                    <button type="submit">Create Thread</button>
                 </form>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

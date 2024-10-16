@@ -1,52 +1,99 @@
-// Simulate data loading for metrics
-document.addEventListener("DOMContentLoaded", function () {
-    // Simulate data for Total Scrapes and Active Threads
-    setTimeout(function () {
-        document.querySelector(".metric-box:nth-child(1) p:last-child").textContent = "1234";
-        document.querySelector(".metric-box:nth-child(3) p:last-child").textContent = "5";
-    }, 2000); // Simulates data loading after 2 seconds
-});
+document.addEventListener('DOMContentLoaded', function() {
+    // Example Data (to simulate real-time scraping)
+    const processStatusTableBody = document.querySelector('.process-status tbody');
+    const scrapedProfiles = document.getElementById('scraped-profiles');
+    const totalScrapes = document.getElementById('total-scrapes');
+    const totalThreads = document.getElementById('total-threads');
+    const activeThreads = document.getElementById('active-threads');
 
-// Handle form submission for "Create Thread" section
-const createThreadForm = document.querySelector('.create-thread form');
+    // Simulated data for threads (You can replace this with real-time data from your backend)
+    const threads = [
+        { name: 'Instagram CEOs', status: 'Active', target: '50 Profiles', progress: '30%' },
+        { name: 'Tech Founders Discord', status: 'Complete', target: '100 Profiles', progress: '100%' },
+        { name: 'Google Tech Articles', status: 'Active', target: '70 Profiles', progress: '45%' },
+    ];
 
-createThreadForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+    const scrapedData = {
+        totalScrapes: 220,
+        totalThreads: threads.length,
+        activeThreads: threads.filter(thread => thread.status === 'Active').length,
+        profilesScraped: 150
+    };
 
-    const niche = document.getElementById('niche').value;
-    const leadListName = document.getElementById('leadListName').value;
-    const leadListDescription = document.getElementById('leadListDescription').value;
+    // Update metrics
+    totalScrapes.textContent = scrapedData.totalScrapes;
+    totalThreads.textContent = scrapedData.totalThreads;
+    activeThreads.textContent = scrapedData.activeThreads;
+    scrapedProfiles.textContent = scrapedData.profilesScraped;
 
-    // Basic form validation (ensure required fields are not empty)
-    if (!niche || !leadListName) {
-        alert('Please fill out all required fields.');
-        return;
-    }
+    // Populate the process status table
+    threads.forEach(thread => {
+        const row = document.createElement('tr');
 
-    // Simulate thread creation process
-    alert(`Thread created successfully!\nNiche: ${niche}\nLead List Name: ${leadListName}\nDescription: ${leadListDescription}`);
-    
-    // Clear the form after submission
-    createThreadForm.reset();
-});
+        const nameCell = document.createElement('td');
+        nameCell.textContent = thread.name;
+        row.appendChild(nameCell);
 
-// Placeholder for adding dynamic rows in "Process Status" table
-function addProcessStatusRow(name, status, target, progress) {
-    const tableBody = document.querySelector('.process-status tbody');
-    const row = document.createElement('tr');
+        const statusCell = document.createElement('td');
+        statusCell.textContent = thread.status;
+        row.appendChild(statusCell);
 
-    row.innerHTML = `
-        <td>${name}</td>
-        <td>${status}</td>
-        <td>${target}</td>
-        <td>${progress}</td>
-    `;
+        const targetCell = document.createElement('td');
+        targetCell.textContent = thread.target;
+        row.appendChild(targetCell);
 
-    tableBody.appendChild(row);
-}
+        const progressCell = document.createElement('td');
+        progressCell.textContent = thread.progress;
+        row.appendChild(progressCell);
 
-// Example: Adding rows dynamically (You can connect this to real data)
-document.addEventListener("DOMContentLoaded", function () {
-    addProcessStatusRow('Lead Generation', 'In Progress', '50 Leads', '30%');
-    addProcessStatusRow('Discord Scraping', 'Complete', '100 Leads', '100%');
+        processStatusTableBody.appendChild(row);
+    });
+
+    // Create new thread functionality
+    const createThreadForm = document.getElementById('create-thread-form');
+    createThreadForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const niche = document.getElementById('niche').value;
+        const leadListName = document.getElementById('leadListName').value;
+
+        if (niche && leadListName) {
+            const newThread = {
+                name: leadListName,
+                status: 'Active',
+                target: '0 Profiles',
+                progress: '0%'
+            };
+
+            // Update the process status table dynamically
+            const row = document.createElement('tr');
+
+            const nameCell = document.createElement('td');
+            nameCell.textContent = newThread.name;
+            row.appendChild(nameCell);
+
+            const statusCell = document.createElement('td');
+            statusCell.textContent = newThread.status;
+            row.appendChild(statusCell);
+
+            const targetCell = document.createElement('td');
+            targetCell.textContent = newThread.target;
+            row.appendChild(targetCell);
+
+            const progressCell = document.createElement('td');
+            progressCell.textContent = newThread.progress;
+            row.appendChild(progressCell);
+
+            processStatusTableBody.appendChild(row);
+
+            // Update total threads count and active threads count
+            scrapedData.totalThreads++;
+            scrapedData.activeThreads++;
+
+            totalThreads.textContent = scrapedData.totalThreads;
+            activeThreads.textContent = scrapedData.activeThreads;
+        } else {
+            alert('Please fill in the required fields.');
+        }
+    });
 });

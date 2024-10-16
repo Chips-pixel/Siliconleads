@@ -9,4 +9,4 @@ This is a simple project to showcase my work and interests.
 
 ## How to Visit
 
-You can visit the live version of this site at: [https://yourusername.github.io/repositoryname](https://yourusername.github.io/repositoryname)
+You can visit the live version of this site at: [https://github.com/Chips-pixel/Siliconleads)

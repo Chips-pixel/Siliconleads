@@ -1,4 +1,4 @@
-# Welcome to Zarrar's Website
+# Welcome to Website
 
 This is a simple project to showcase my work and interests.
 

@@ -3,65 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lead Generation Site</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+    <title>Lead Scraper Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
 </head>
 <body>
-    <header>
-        <h1>Welcome to Silicon Leads</h1>
-        <p>Your partner in finding quality leads for your business.</p>
-        <nav>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Main Container -->
+    <div class="container">
 
-    <main>
-        <section id="features">
-            <h2>Our Features</h2>
-            <div class="feature">
-                <h3>Feature 1</h3>
-                <p>Short description of Feature 1.</p>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>CASTFORM</h2>
             </div>
-            <div class="feature">
-                <h3>Feature 2</h3>
-                <p>Short description of Feature 2.</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Main Dashboard</a></li>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Main Dashboard</h1>
+                <p>Facebook / Main Dashboard</p>
             </div>
-            <div class="feature">
-                <h3>Feature 3</h3>
-                <p>Short description of Feature 3.</p>
+
+            <!-- Metrics Section -->
+            <div class="metrics">
+                <div class="metric-box">
+                    <p>Total Scrapes</p>
+                    <p>Loading...</p>
+                </div>
+                <div class="metric-box">
+                    <p>Total Threads</p>
+                    <p>7</p>
+                </div>
+                <div class="metric-box">
+                    <p>Active Threads</p>
+                    <p>7</p>
+                </div>
+                <div class="metric-box">
+                    <p>Account Duration</p>
+                    <p>Lifetime</p>
+                </div>
             </div>
-        </section>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+            <!-- Analytics Section -->
+            <div class="analytics">
+                <h3>Profiles Scraped</h3>
+                <div class="chart">
+                    <p>0</p>
+                    <!-- Placeholder for future integration of a chart/graph -->
+                </div>
+            </div>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Information about the company and its mission.</p>
-        </section>
-    </main>
+            <!-- Process Status Section -->
+            <div class="process-status">
+                <h3>Process Status</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Target</th>
+                            <th>Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add rows dynamically here if necessary -->
+                    </tbody>
+                </table>
+            </div>
 
-    <footer>
-        <p>&copy; 2024 Silicon Leads. All rights reserved.</p>
-    </footer>
+            <!-- Create Thread Section -->
+            <div class="create-thread">
+                <h3>Create Thread</h3>
+                <form action="">
+                    <label for="niche">Niche*</label>
+                    <input type="text" id="niche" name="niche" required>
 
-    <script src="script.js"></script>
+                    <label for="leadListName">Lead List Name*</label>
+                    <input type="text" id="leadListName" name="leadListName" required>
+
+                    <label for="leadListDescription">Lead List Description</label>
+                    <textarea id="leadListDescription" name="leadListDescription" rows="3"></textarea>
+
+                    <button type="submit">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
